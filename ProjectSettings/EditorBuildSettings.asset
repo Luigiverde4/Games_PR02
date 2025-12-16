@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneRestaurantOut.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SceneRestaurantIn.unity
+    guid: 50310757326844ecaa43539f24f3ecf7
   m_configObjects: {}
