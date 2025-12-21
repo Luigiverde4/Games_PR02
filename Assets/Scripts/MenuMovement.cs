@@ -2,25 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuMovement : MonoBehaviour
+public class MenuScale : MonoBehaviour
 {
-public float amplitude = 0.1f;   
-    public float speed = 2.2f;         
+    public float amplitude = 0.03f;   
+    public float speed = 2.3f;      
 
-    private Vector3 startPos;
+    private Vector3 startScale;
 
     void Start()
     {
-        startPos = transform.position;
+        startScale = transform.localScale; 
     }
 
     void Update()
     {
-        float offsetY = Mathf.Sin(Time.time * speed) * amplitude;
-        transform.position = new Vector3(startPos.x, startPos.y + offsetY, startPos.z);
+        float scaleOffset = Mathf.Sin(Time.time * speed) * amplitude;
+        transform.localScale = startScale + new Vector3(scaleOffset, scaleOffset, scaleOffset);
     }
-
 }
-
-
-

@@ -5,32 +5,42 @@ using TMPro;
 
 public class NextTextController : MonoBehaviour
 {
-    [Header("Riferimenti")]
+    [Header("UI")]
     public TextMeshPro textMeshPro;
 
-    [Header("Testi")]
+    [Header("Contenuto")]
     [TextArea(2, 5)]
     public string[] texts;
+
+    public AudioClip[] audioClips;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
 
     private int currentIndex = 0;
 
     void Start()
     {
-        if (texts.Length > 0)
-        {
-            textMeshPro.text = texts[currentIndex];
-        }
+        ShowCurrent();
     }
 
     public void NextText()
     {
         currentIndex++;
-
         if (currentIndex >= texts.Length)
-        {
-            currentIndex = texts.Length - 1; // oppure 0 se vuoi loop
-        }
+            currentIndex = texts.Length - 1;
 
+        ShowCurrent();
+    }
+
+    void ShowCurrent()
+    {
         textMeshPro.text = texts[currentIndex];
+        if (audioSource != null && audioClips.Length > currentIndex)
+        {
+            audioSource.Stop();
+            audioSource.clip = audioClips[currentIndex];
+            audioSource.Play();
+        }
     }
 }

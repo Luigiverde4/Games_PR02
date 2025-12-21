@@ -9,8 +9,8 @@ public class VolumeToggleSprite : MonoBehaviour
     public Sprite volumeOnSprite;
     public Sprite volumeOffSprite;
 
-    [Header("Audio")]
-    public AudioSource menuMusic;
+    //[Header("Audio")]
+    //public AudioSource menuMusic;
 
     private SpriteRenderer spriteRenderer;
     private bool isMuted = false;
@@ -30,7 +30,7 @@ public class VolumeToggleSprite : MonoBehaviour
     {
         isMuted = !isMuted;
 
-        menuMusic.mute = isMuted;
+        AudioListener.pause = isMuted;
 
         UpdateSprite();
     }

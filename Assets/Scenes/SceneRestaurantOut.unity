@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4159257dc0c32408d9cef67d4f942c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  speed: 2.2
+  amplitude: 0.07
+  speed: 2.3
 --- !u!114 &140405048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 772769553}
   - component: {fileID: 772769552}
   m_Layer: 0
-  m_Name: image
+  m_Name: pizzeria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 859458008}
   m_Layer: 0
   m_Name: volume
-  m_TagString: Untagged
+  m_TagString: Mute
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,7 +603,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeOnSprite: {fileID: 21300000, guid: 8736c0a4861764f7c888ae9f89d671c0, type: 3}
   volumeOffSprite: {fileID: 21300000, guid: de52fcb80fc8748bb98c35a76439249f, type: 3}
-  menuMusic: {fileID: 1371817350}
 --- !u!1 &1371817347
 GameObject:
   m_ObjectHideFlags: 0
