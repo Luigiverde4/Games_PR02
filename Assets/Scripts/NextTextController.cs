@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class NextTextController : MonoBehaviour
@@ -28,7 +29,10 @@ public class NextTextController : MonoBehaviour
     {
         currentIndex++;
         if (currentIndex >= texts.Length)
-            currentIndex = texts.Length - 1;
+        {
+            SceneManager.LoadScene("SceneDoingPizza");
+            return;
+        }
 
         ShowCurrent();
     }
