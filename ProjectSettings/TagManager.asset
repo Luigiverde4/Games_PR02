@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PizzaZone
   - Mute
-  - Next
   layers:
   - Default
   - TransparentFX
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Text Layer
+    uniqueID: 3534943545
     locked: 0
