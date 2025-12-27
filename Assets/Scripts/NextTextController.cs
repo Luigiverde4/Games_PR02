@@ -28,10 +28,14 @@ public class NextTextController : MonoBehaviour
     public void NextText()
     {
         currentIndex++;
-        if (currentIndex >= texts.Length)
+        if ((currentIndex >= texts.Length) && SceneManager.GetActiveScene().name == "SceneRestaurantIn")
         {
             SceneManager.LoadScene("SceneDoingPizza");
             return;
+        } 
+        else if (currentIndex >= texts.Length)
+        {
+            currentIndex = texts.Length - 1; // Stay on the last text if no scene change
         }
 
         ShowCurrent();

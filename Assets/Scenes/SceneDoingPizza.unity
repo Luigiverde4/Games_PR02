@@ -161,7 +161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1. Arrastre la masa de pizza sobre la tabla de cortar.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -476,6 +476,8 @@ GameObject:
   - component: {fileID: 463040308}
   - component: {fileID: 463040307}
   - component: {fileID: 463040306}
+  - component: {fileID: 463040310}
+  - component: {fileID: 463040311}
   m_Layer: 0
   m_Name: next
   m_TagString: Next
@@ -564,6 +566,145 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &463040310
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463040305}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.36, y: 10.24}
+    newSize: {x: 15.36, y: 10.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.36, y: 10.24}
+  m_EdgeRadius: 0
+--- !u!114 &463040311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463040305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c076c3426203d48588f4ea2fb05f26d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textController: {fileID: 581882654}
+--- !u!1 &581882653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581882655}
+  - component: {fileID: 581882654}
+  - component: {fileID: 581882656}
+  - component: {fileID: 581882657}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &581882654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581882653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaea8c5671d3e487993eb4370252f093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 32663244}
+  texts:
+  - 1. Arrastre la masa de pizza sobre la tabla de cortar
+  - "2. Haz clic en el tomate y exti\xE9ndelo sobre la pizza."
+  - "3. Haz clic en el queso y exti\xE9ndelo sobre la pizza."
+  audioClips: []
+  audioSource: {fileID: 0}
+--- !u!4 &581882655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581882653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.07, y: 4.93, z: -0.09040021}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581882656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581882653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f82bb36449c4c6ab012eb3efaffba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tomatoSplatPrefab: {fileID: 1200554180}
+  tomatoMode: 0
+--- !u!114 &581882657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581882653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d740563b650bb4c0e94be3256e224e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cheeseSplatPrefab: {fileID: 2134693739}
+  cheeseMode: 0
 --- !u!1 &988952155
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,9 +761,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1479421929
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 0}
   m_FlipX: 0
@@ -694,6 +835,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1200554180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575466767695438010, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+  m_PrefabInstance: {fileID: 1709718463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239103753
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +1008,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1709718463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049901274404637802, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575466767695438010, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_Name
+      value: tomato_sause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228457212144291015, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228457212144291015, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228457212144291015, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1479421929
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 596e83811e29b4f9ea2a6e7bc0065a22, type: 3}
 --- !u!1 &1900787250
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1188,7 @@ GameObject:
   - component: {fileID: 1935213682}
   - component: {fileID: 1935213681}
   - component: {fileID: 1935213680}
+  - component: {fileID: 1935213685}
   m_Layer: 0
   m_Name: tomate
   m_TagString: Untagged
@@ -1117,6 +1333,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1935213685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935213679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc0951655ce7443b989c40d0a4b203c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938902733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1450,7 @@ GameObject:
   - component: {fileID: 1945737533}
   - component: {fileID: 1945737532}
   - component: {fileID: 1945737531}
+  - component: {fileID: 1945737536}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -1366,6 +1595,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1945737536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945737530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc304b0621574e748f95a4d5cebfe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2102198666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1624,7 @@ GameObject:
   - component: {fileID: 2102198673}
   m_Layer: 0
   m_Name: pasta_pizza
-  m_TagString: Untagged
+  m_TagString: PizzaTomate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1496,7 +1737,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1565,6 +1806,76 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2134693739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4004881073382503365, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+  m_PrefabInstance: {fileID: 8214494508581799278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8214494508581799278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662264558520802311, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058672472442449037, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058672472442449037, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1788834031
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004881073382503365, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
+      propertyPath: m_Name
+      value: queso
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb8e3a0b1323340cbbe10fc68bc31de9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1580,3 +1891,6 @@ SceneRoots:
   - {fileID: 463040308}
   - {fileID: 32663246}
   - {fileID: 1239103755}
+  - {fileID: 581882655}
+  - {fileID: 1709718463}
+  - {fileID: 8214494508581799278}

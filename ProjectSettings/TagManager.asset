@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PizzaZone
   - Mute
+  - Next
+  - PizzaTomate
+  - PizzaTomateCheese
+  - PastaPizza
   layers:
   - Default
   - TransparentFX
@@ -45,4 +49,10 @@ TagManager:
     locked: 0
   - name: Text Layer
     uniqueID: 3534943545
+    locked: 0
+  - name: Tomato layer
+    uniqueID: 1479421929
+    locked: 0
+  - name: Queso layer
+    uniqueID: 1788834031
     locked: 0
