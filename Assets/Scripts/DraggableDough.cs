@@ -1,30 +1,69 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DraggableDough : MonoBehaviour
 {
+    public Sprite extendedDough;
+    public float dragZ = -2f;
     private bool isDragging = false;
     private Vector3 offset;
-    public float dragZ = -2f;
+    private static GameObject doughPlaced;
 
-    public void startDragging()
+    void OnMouseDown()
     {
-        
-        Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        clickPos.z = dragZ;
-        offset = transform.position - clickPos;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = dragZ;
+
+        offset = transform.position - mousePos;
         isDragging = true;
     }
 
-    void checkPlace()
+    public void StartDragging()
     {
-        Collider2D hit = Physics2D.OverlapPoint(transform.position);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = dragZ;
 
-        if (hit != null && !hit.CompareTag("PizzaZone"))
+        offset = transform.position - mousePos;
+        isDragging = true;
+    }
+
+    void pizzaPlacing()
+    {
+        Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
+        Collider2D pizzaZone = null;
+
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("PizzaZone"))
+            {
+                pizzaZone = hit;
+                break;
+            }
+        }
+
+        if (pizzaZone != null)
+        {
+            if (doughPlaced != null && doughPlaced != gameObject)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Vector3 centerPos = pizzaZone.bounds.center;
+                centerPos.z = dragZ;
+                transform.position = centerPos;
+
+                SpriteRenderer sr = GetComponent<SpriteRenderer>();
+                if (sr) sr.sprite = extendedDough;
+
+                doughPlaced = gameObject;
+            }
+        }
+        else
         {
             Destroy(gameObject);
         }
+
+        isDragging = false;
     }
 
     void Update()
@@ -37,8 +76,7 @@ public class DraggableDough : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            checkPlace();
-            isDragging = false;
+            pizzaPlacing();
         }
     }
 }
