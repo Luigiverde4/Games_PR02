@@ -674,6 +674,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   extendedDough: {fileID: 21300000, guid: 6edd8362c39e34f3b82aab516dc1d568, type: 3}
   dragZ: -2
+--- !u!114 &272458252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272458245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91796b8b34c5ffe4ab810ca047cdea24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estado: bola
 --- !u!1 &463040305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1328,6 @@ GameObject:
   - component: {fileID: 1935213684}
   - component: {fileID: 1935213683}
   - component: {fileID: 1935213682}
-  - component: {fileID: 1935213681}
   - component: {fileID: 1935213680}
   - component: {fileID: 1935213685}
   m_Layer: 0
@@ -1338,18 +1350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverScale: 1.15
---- !u!114 &1935213681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935213679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db57569a7b49b4283b6a1490bc196f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1935213682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1456,7 +1456,7 @@ Transform:
   m_GameObject: {fileID: 1935213679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: -2.29, z: 0}
+  m_LocalPosition: {x: -3.91, y: -2.29, z: -2}
   m_LocalScale: {x: 0.030455705, y: 0.030455705, z: 0.030455705}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1471,9 +1471,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1935213679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc0951655ce7443b989c40d0a4b203c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5927ae74c2e4e80469f128637a4324d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tomatoSprite: {fileID: 21300000, guid: d68fbcdeaacbb4b4b99ecefc2d4fadb6, type: 3}
 --- !u!1 &1938902733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,7 +1719,7 @@ Transform:
   m_GameObject: {fileID: 1945737530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.23, y: -2.41, z: 0}
+  m_LocalPosition: {x: 6.23, y: -2.41, z: -2}
   m_LocalScale: {x: 0.042655475, y: 0.042655475, z: 0.042655475}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1801,6 +1802,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pastaPizza
       objectReference: {fileID: 0}
+    - target: {fileID: 7482348307398059504, guid: a8a1b152bbc3df140985176690c66952, type: 3}
+      propertyPath: m_TagString
+      value: PastaBall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1811,6 +1816,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7482348307398059504, guid: a8a1b152bbc3df140985176690c66952, type: 3}
       insertIndex: -1
       addedObject: {fileID: 272458248}
+    - targetCorrespondingSourceObject: {fileID: 7482348307398059504, guid: a8a1b152bbc3df140985176690c66952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272458252}
   m_SourcePrefab: {fileID: 100100000, guid: a8a1b152bbc3df140985176690c66952, type: 3}
 --- !u!1001 &8214494508581799278
 PrefabInstance:

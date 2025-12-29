@@ -10,6 +10,8 @@ TagManager:
   - PizzaTomate
   - PizzaTomateCheese
   - PastaPizza
+  - PastaBall
+  - PizzaExtended
   layers:
   - Default
   - TransparentFX

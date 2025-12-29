@@ -4,20 +4,22 @@ public class DraggableDough : MonoBehaviour
 {
     public Sprite extendedDough;
     public float dragZ = -2f;
+
     private bool isDragging = false;
     private Vector3 offset;
     private static GameObject doughPlaced;
 
     void OnMouseDown()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = dragZ;
-
-        offset = transform.position - mousePos;
-        isDragging = true;
+        IniciarArrastre();
     }
 
     public void StartDragging()
+    {
+        IniciarArrastre();
+    }
+
+    void IniciarArrastre()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = dragZ;
@@ -28,6 +30,8 @@ public class DraggableDough : MonoBehaviour
 
     void pizzaPlacing()
     {
+        isDragging = false;
+
         Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
         Collider2D pizzaZone = null;
 
@@ -40,30 +44,34 @@ public class DraggableDough : MonoBehaviour
             }
         }
 
-        if (pizzaZone != null)
+        if (pizzaZone == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 centerPos = pizzaZone.bounds.center;
+        centerPos.z = dragZ;
+        transform.position = centerPos;
+
+        PizzaManager pm = GetComponent<PizzaManager>();
+        if (pm == null) return;
+
+        if (pm.estado == "bola")
         {
             if (doughPlaced != null && doughPlaced != gameObject)
             {
                 Destroy(gameObject);
+                return;
             }
-            else
-            {
-                Vector3 centerPos = pizzaZone.bounds.center;
-                centerPos.z = dragZ;
-                transform.position = centerPos;
 
-                SpriteRenderer sr = GetComponent<SpriteRenderer>();
-                if (sr) sr.sprite = extendedDough;
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null)
+                sr.sprite = extendedDough;
 
-                doughPlaced = gameObject;
-            }
+            pm.setEstado("extendido");
+            doughPlaced = gameObject;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        isDragging = false;
     }
 
     void Update()
@@ -75,8 +83,6 @@ public class DraggableDough : MonoBehaviour
         transform.position = mousePos + offset;
 
         if (Input.GetMouseButtonUp(0))
-        {
             pizzaPlacing();
-        }
     }
 }
