@@ -778,8 +778,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -760023751
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3339bdbb3ba8940be9b97f56f67872c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -801,7 +801,7 @@ Transform:
   m_GameObject: {fileID: 463040305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.1799927, y: -3.9700012, z: 0}
+  m_LocalPosition: {x: 6, y: -4, z: 0}
   m_LocalScale: {x: 0.2240366, y: 0.2240366, z: 0.2240366}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1046,7 +1046,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9023155, y: 0.7711207}
   m_EdgeRadius: 0
---- !u!1 &1568739085
+--- !u!1 &1071197794
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1913,5 +1913,4 @@ SceneRoots:
   - {fileID: 1728308233}
   - {fileID: 111257833}
   - {fileID: 2054258260026723978}
-  - {fileID: 7647350879759323219}
-  - {fileID: 1916145724}
+  - {fileID: 1782615635}
