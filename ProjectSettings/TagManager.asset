@@ -7,11 +7,7 @@ TagManager:
   - PizzaZone
   - Mute
   - Next
-  - PizzaTomate
-  - PizzaTomateCheese
-  - PastaPizza
-  - PastaBall
-  - PizzaExtended
+  - Furnace
   layers:
   - Default
   - TransparentFX
