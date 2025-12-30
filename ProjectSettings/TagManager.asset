@@ -8,6 +8,8 @@ TagManager:
   - Mute
   - Next
   - Furnace
+  - ServeZone
+  - Order
   layers:
   - Default
   - TransparentFX
