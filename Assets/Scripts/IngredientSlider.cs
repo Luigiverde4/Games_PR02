@@ -11,10 +11,12 @@ public class IngredientSlider : MonoBehaviour
     {
         public Sprite icon;
         public int price;
+        public string name;
     }
 
     public Image ingredientImage;
     public TextMeshPro priceText;
+    public TextMeshPro nameText;
 
     public Ingredient[] ingredients;
 
@@ -49,5 +51,6 @@ public class IngredientSlider : MonoBehaviour
     {
         ingredientImage.sprite = ingredients[currentIndex].icon;
         priceText.text = ingredients[currentIndex].price + " $";
+        nameText.text = ingredients[currentIndex].name;
     }
 }
