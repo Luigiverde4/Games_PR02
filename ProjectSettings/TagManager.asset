@@ -10,6 +10,7 @@ TagManager:
   - Furnace
   - ServeZone
   - Order
+  - Pizza
   layers:
   - Default
   - TransparentFX
