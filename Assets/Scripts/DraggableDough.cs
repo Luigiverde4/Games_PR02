@@ -84,6 +84,7 @@ public class DraggableDough : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
         Collider2D pizzaZone = null;
         Collider2D furnaceZone = null;
+        Collider2D serveZone = null;
 
         foreach (var hit in hits)
         {
@@ -94,6 +95,10 @@ public class DraggableDough : MonoBehaviour
             else if (hit.CompareTag("Furnace"))
             {
                 furnaceZone = hit;
+            }
+            else if (hit.CompareTag("ServeZone"))
+            {
+                serveZone = hit;
             }
         }
 
@@ -147,6 +152,27 @@ public class DraggableDough : MonoBehaviour
         if (inFurnace)
         {
             exitFurnace();
+        }
+
+        if (serveZone != null)
+        {
+            if (pm.estado == "cocinado")
+            {
+                //Añadir cuando esté el cñodigo para valorar la puntuación de la pizza
+                Debug.Log("Pizzza Servida");
+                Destroy(gameObject);
+            }
+            else if (pm.estado == "quemado")
+            {
+                //Añadir cuando esté el código para valorar la puntuación de la pizza
+                Debug.Log("Muy mal, se te ha quemado la pizza");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("La pizza no está lista");
+            }
+            return;
         }
         
         Destroy(gameObject);
