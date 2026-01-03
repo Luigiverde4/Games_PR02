@@ -11,6 +11,18 @@ TagManager:
   - ServeZone
   - Order
   - Pizza
+  - Pepperoni
+  - Mushroom
+  - Bacon
+  - Egg
+  - Olive
+  - Onion
+  - Pineapple
+  - Pepper
+  - Shrimp
+  - Cheese
+  - Anchovies
+  - Caper
   layers:
   - Default
   - TransparentFX

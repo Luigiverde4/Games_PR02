@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3020396}
   m_Layer: 0
   m_Name: container6
-  m_TagString: Untagged
+  m_TagString: Onion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 46191366}
   m_Layer: 0
   m_Name: container4
-  m_TagString: Untagged
+  m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 100958310}
   m_Layer: 0
   m_Name: container8
-  m_TagString: Untagged
+  m_TagString: Pepper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 163375273}
   m_Layer: 0
   m_Name: container7
-  m_TagString: Untagged
+  m_TagString: Pineapple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 302970063}
   m_Layer: 0
   m_Name: container2
-  m_TagString: Untagged
+  m_TagString: Mushroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2311,7 +2311,7 @@ GameObject:
   - component: {fileID: 473574543}
   m_Layer: 0
   m_Name: container3
-  m_TagString: Untagged
+  m_TagString: Bacon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2635,7 +2635,7 @@ GameObject:
   - component: {fileID: 551899376}
   m_Layer: 0
   m_Name: container5
-  m_TagString: Untagged
+  m_TagString: Olive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2833,7 +2833,7 @@ GameObject:
   - component: {fileID: 660081131}
   m_Layer: 0
   m_Name: ServingZone
-  m_TagString: Untagged
+  m_TagString: ServeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2964,7 +2964,7 @@ GameObject:
   - component: {fileID: 709531889}
   m_Layer: 0
   m_Name: container1
-  m_TagString: Untagged
+  m_TagString: Pepperoni
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3112,7 +3112,7 @@ GameObject:
   - component: {fileID: 839015744}
   m_Layer: 0
   m_Name: container9
-  m_TagString: Untagged
+  m_TagString: Shrimp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4459,7 +4459,7 @@ GameObject:
   - component: {fileID: 1589465595}
   m_Layer: 0
   m_Name: container12
-  m_TagString: Untagged
+  m_TagString: Caper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4607,7 +4607,7 @@ GameObject:
   - component: {fileID: 1674420060}
   m_Layer: 0
   m_Name: container11
-  m_TagString: Untagged
+  m_TagString: Anchovies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5179,7 +5179,7 @@ GameObject:
   - component: {fileID: 1908343954}
   m_Layer: 0
   m_Name: container10
-  m_TagString: Untagged
+  m_TagString: Cheese
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
