@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public string gameSceneName = "SceneRestaurantIn";
-
+    public string gameSceneName;
     void OnMouseDown()
     {
-        SceneManager.LoadScene(gameSceneName);
+        if (GameModeManager.Instance.isFirstTime)
+        {
+            Debug.Log("Primera vez - isFirstTime a false");
+            GameModeManager.Instance.isFirstTime = false;
+            SceneManager.LoadScene("SceneRestaurantIn");
+        }
+        else
+        {
+            SceneManager.LoadScene(gameSceneName);
+        }
     }
 }
