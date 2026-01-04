@@ -23,7 +23,42 @@ public class BuyPopup : MonoBehaviour
 
     public void ConfirmBuy()
     {
-        Debug.Log("Hai comprato!");
-        ClosePopup();
+        // Buscar el texto del precio
+        GameObject priceTextObj = GameObject.Find("text_price");
+        if (priceTextObj != null)
+        {
+            TMP_Text priceText = priceTextObj.GetComponent<TMP_Text>();
+            if (priceText != null)
+            {
+                // Intentar convertir el texto a int, removiendo el símbolo $
+                string priceString = priceText.text.Replace("$", "").Trim();
+                if (int.TryParse(priceString, out int price))
+                {
+                    // Intentar quitar el dinero
+                    if (MoneyManager.Instance.quitarDinero(price))
+                    {
+                        Debug.Log("Compra exitosa! Dinero restante: " + MoneyManager.Instance.GetMoney());
+                        // TODO apuntar ingrediente comprado
+                        ClosePopup();
+                    }
+                    else
+                    {
+                        Debug.Log("No tienes suficiente dinero. Precio: " + price + ", Dinero: " + MoneyManager.Instance.GetMoney());
+                    }
+                }
+                else
+                {
+                    Debug.LogError("El texto del precio no es un número válido: " + priceText.text);
+                }
+            }
+            else
+            {
+                Debug.LogError("No se encontró componente TMP_Text en text_price");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontró GameObject llamado text_price");
+        }
     }
 }
