@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public string gameSceneName;
+    public bool isDifferentButton;
     void OnMouseDown()
     {
-        if (GameModeManager.Instance.isFirstTime)
+        if (GameModeManager.Instance.isFirstTime && !isDifferentButton)
         {
             Debug.Log("Primera vez - isFirstTime a false");
             GameModeManager.Instance.isFirstTime = false;

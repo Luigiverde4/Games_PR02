@@ -1876,6 +1876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneName: SceneRestaurantOut
+  isDifferentButton: 1
 --- !u!1 &828060084
 GameObject:
   m_ObjectHideFlags: 0
