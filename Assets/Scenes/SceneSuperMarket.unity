@@ -2398,22 +2398,37 @@ MonoBehaviour:
   ingredients:
   - icon: {fileID: 21300000, guid: cb45fb042f682df468920438a15319eb, type: 3}
     price: 10
-    name: Olives
+    name: Olive
   - icon: {fileID: 21300000, guid: 3d4906bec64c85848ac707bbfc67ff1d, type: 3}
     price: 15
-    name: Peppers
+    name: Pepper
   - icon: {fileID: 21300000, guid: 5a8cef7fd1cba574b88a5c060c2753ff, type: 3}
     price: 20
-    name: Mushrooms
+    name: Mushroom
   - icon: {fileID: 21300000, guid: 52e69894e449b61458ff9c6a085293ea, type: 3}
     price: 25
-    name: Eggs
+    name: Egg
   - icon: {fileID: 21300000, guid: dd4e9630c492fab43bed3a6892afec19, type: 3}
     price: 30
-    name: Shrimps
+    name: Shrimp
   - icon: {fileID: 21300000, guid: 0140fbae52123f14f8441c37b8c26a2a, type: 3}
     price: 35
     name: Anchiovies
+  - icon: {fileID: 21300000, guid: 0e5ba2fecd4aa104ea788e92aa97a378, type: 3}
+    price: 35
+    name: Onion
+  - icon: {fileID: 21300000, guid: 97b3e8c9744a20b48855b285aba08150, type: 3}
+    price: 35
+    name: Bacon
+  - icon: {fileID: 21300000, guid: cbf6f363bcae18040b7488e646e82577, type: 3}
+    price: 35
+    name: Pineapple
+  - icon: {fileID: 21300000, guid: 3398520e7df791f45a545ac3010a6e9c, type: 3}
+    price: 35
+    name: Caper
+  - icon: {fileID: 21300000, guid: 90b76fb7bff62cc49998e13326749157, type: 3}
+    price: 35
+    name: Cheese
 --- !u!4 &1368822191
 Transform:
   m_ObjectHideFlags: 0
