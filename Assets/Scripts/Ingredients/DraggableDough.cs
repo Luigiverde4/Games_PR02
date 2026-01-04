@@ -13,8 +13,8 @@ public class DraggableDough : MonoBehaviour
     private Vector3 offset;
     private static GameObject doughPlaced;
 
-    public float cookingTime = 10f;
-    public float burningTime = 3f;
+    public float cookingTime = 8f;
+    public float burningTime = 5f;
     public int furnaceCapacity = 1;
 
     private static int furnaceCounter = 0;
@@ -43,10 +43,20 @@ public class DraggableDough : MonoBehaviour
     void enterFurnace()
     {
         if(inFurnace) return;
+        if (furnaceCounter >= furnaceCapacity) return;
 
+        PizzaManager pm = GetComponent<PizzaManager>();
         inFurnace = true;
-        furnaceCounter++;
-        furnaceRoutine = StartCoroutine(furnaceMode());
+        furnaceCounter += 1;
+
+        if (pm.estado == "queso")
+        {
+            furnaceRoutine = StartCoroutine(CookRoutine());
+        }
+        else if (pm.estado == "cocinado")
+        {
+            furnaceRoutine = StartCoroutine(BurnRoutine());
+        }
     }
 
     void exitFurnace()
@@ -55,24 +65,34 @@ public class DraggableDough : MonoBehaviour
 
         inFurnace = false;
         furnaceCounter = Mathf.Max(0, furnaceCounter - 1);
-        furnaceRoutine = null;
+        if (furnaceRoutine != null)
+        {
+            StopCoroutine(furnaceRoutine);
+            furnaceRoutine = null;
+        }
     }
 
-    IEnumerator furnaceMode()
+    IEnumerator CookRoutine()
     {
         yield return new WaitForSeconds(cookingTime);
 
-        PizzaManager pm = GetComponent<PizzaManager>();
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-
-        if (!inFurnace || pm == null || sr == null) yield break;
-
-        sr.sprite = coockedPizza;
-        pm.setEstado("cocinado");
-
-        yield return new WaitForSeconds(burningTime);
         if (!inFurnace) yield break;
 
+        PizzaManager pm = GetComponent<PizzaManager>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = coockedPizza;
+        pm.setEstado("cocinado");
+        furnaceRoutine = StartCoroutine(BurnRoutine());
+    }
+
+    IEnumerator BurnRoutine()
+    {
+        yield return new WaitForSeconds(burningTime);
+
+        if (!inFurnace) yield break;
+
+        PizzaManager pm = GetComponent<PizzaManager>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = burntPizza;
         pm.setEstado("quemado");
     }
@@ -100,6 +120,11 @@ public class DraggableDough : MonoBehaviour
             {
                 serveZone = hit;
             }
+        }
+
+        if (furnaceZone == null && inFurnace)
+        {
+            exitFurnace();
         }
 
         PizzaManager pm = GetComponent<PizzaManager>();
@@ -132,18 +157,11 @@ public class DraggableDough : MonoBehaviour
 
         if (furnaceZone != null)
         {
-            if (inFurnace)
-            {
-                return;
-            }
-            
-            if (pm.estado != "queso")
+            if (pm.estado != "queso" && pm.estado != "cocinado")
             {
                 Destroy(gameObject);
                 return;
             }
-
-            if (!inFurnace && furnaceCounter >= furnaceCapacity) return;
 
             enterFurnace();
             return;
@@ -152,6 +170,7 @@ public class DraggableDough : MonoBehaviour
         if (inFurnace)
         {
             exitFurnace();
+            return;
         }
 
         if (serveZone != null)
@@ -180,10 +199,7 @@ public class DraggableDough : MonoBehaviour
 
     void OnDestroy()
     {
-        if (inFurnace)
-        {
-            exitFurnace();
-        }
+        exitFurnace();
     }
 
     void Update()

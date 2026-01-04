@@ -11,9 +11,20 @@ public class IngredientManager : MonoBehaviour
    public Vector2 ingredientScale = new Vector2(1f,1f);
    private GameObject currentIngredient;
    private bool isDragging = false;
+   public bool Active = true;
+
+   private SpriteRenderer sr;
+   private BoxCollider2D col;
+
+   void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        col = GetComponent<BoxCollider2D>();
+    }
 
    void OnMouseDown()
     {
+        if (!Active) return;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = dragZ;
         currentIngredient = Instantiate(ingredientPrefab, mousePos, Quaternion.identity);
@@ -111,6 +122,9 @@ public class IngredientManager : MonoBehaviour
 
     void Update()
     {
+        if (sr != null) sr.enabled = Active;
+        if (col != null) col.enabled = Active;
+
         if (!isDragging || currentIngredient == null) return;
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
