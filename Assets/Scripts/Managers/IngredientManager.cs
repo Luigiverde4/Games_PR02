@@ -20,6 +20,17 @@ public class IngredientManager : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
+        
+        // Verificar si el ingrediente está comprado
+        if (BoughtIngredientTracker.Instance != null)
+        {
+            Debug.Log("Checking ingredient: " + gameObject.tag);
+            Active = BoughtIngredientTracker.Instance.HasIngredient(gameObject.tag);
+        }
+        else
+        {
+            Active = false; // Por defecto desactivado si no hay tracker
+        }
     }
 
    void OnMouseDown()

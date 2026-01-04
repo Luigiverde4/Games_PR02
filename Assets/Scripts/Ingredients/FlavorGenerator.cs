@@ -11,10 +11,20 @@ public class FlavorGenerator : MonoBehaviour
     public List<TextMeshPro> orderSlots;
 
     [Header("Flavors")]
-    public List<string> flavors = new List<string> { "Pepperoni", "Mushroom", "Bacon" };
+
+    // FLAVOURS:  Cuales ingredientes que puede tener una pizza
+    // public List<string> flavors = new List<string> { "Pepperoni", "Mushroom", "Bacon" };
+    public List<string> flavors = new List<string>();
+    // Coger esta lista para los ingredientes nuevos -  COGER NOMBRE INGREDIENTES DE LOS TAGS
+
+    // Ingredientes básicos para pizza cuando no se han comprado otros
+    private List<string> basicIngredients = new List<string> { "Tomato Sauce", "Queso" };
+
     public float flavorInterval = 10f;
     public int maxOrders = 3;
 
+
+    // LISTA DE PEDIDOS ACTIVOS "INGREDIENTE xCANTIDAD, INGREDIENTE xCANTIDAD"
     public static List<string> ActiveOrders = new List<string>();
 
     float timer = 0f;
@@ -53,6 +63,7 @@ public class FlavorGenerator : MonoBehaviour
     }
 
     void TryCreateOrder()
+    // Crear un nuevo pedido si no se ha alcanzado el máximo
     {
         if (ActiveOrders.Count >= maxOrders)
             return;
@@ -70,11 +81,32 @@ public class FlavorGenerator : MonoBehaviour
     }
 
     string CreateOrder()
+    // Crear un pedido aleatorio
     {
-        int nFlavors = Random.Range(1, flavors.Count + 1);
-        List<string> pool = new List<string>(flavors);
+        // Coger los ingredientes comprados
+        List<string> availableFlavors;
+        if (BoughtIngredientTracker.Instance != null)
+        {
+            availableFlavors = BoughtIngredientTracker.Instance.boughtIngredients;
+        }
+        else
+        {
+            availableFlavors = new List<string>();
+        }
+        
+        // Si no hay ingredientes comprados, usar los básicos
+        if (availableFlavors.Count == 0)
+        {
+            availableFlavors = new List<string>(basicIngredients);
+        }
+        
+        // Decidir cuántos sabores tendrá el pedido
+        int nFlavors = Random.Range(1, availableFlavors.Count + 1);
+        // Crear el pedido
+        List<string> pool = new List<string>(availableFlavors);
         List<string> result = new List<string>();
 
+        // Seleccionar sabores aleatoriamente
         for (int i = 0; i < nFlavors; i++)
         {
             int index = Random.Range(0, pool.Count);

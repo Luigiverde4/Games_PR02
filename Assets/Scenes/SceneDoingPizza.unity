@@ -1913,7 +1913,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 5a8cef7fd1cba574b88a5c060c2753ff, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.35, y: 0.31}
-  Active: 1
+  Active: 0
 --- !u!1 &377409961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,7 +2451,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 97b3e8c9744a20b48855b285aba08150, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.03, y: 0.03}
-  Active: 1
+  Active: 0
 --- !u!1 &503188944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7540917599043234556, guid: 6c703a28c94622e418347d91736a1802, type: 3}
@@ -2868,7 +2868,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9d2c39708d21ea84eb0e8f579844bfe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6.12, y: 4.08}
@@ -2954,7 +2954,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: fdc38cf8aa4d3be478fefd3c6b788155, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.17, y: 0.14}
-  Active: 1
+  Active: 0
 --- !u!1 &839015740
 GameObject:
   m_ObjectHideFlags: 0

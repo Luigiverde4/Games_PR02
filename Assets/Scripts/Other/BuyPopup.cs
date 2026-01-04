@@ -38,7 +38,21 @@ public class BuyPopup : MonoBehaviour
                     if (MoneyManager.Instance.quitarDinero(price))
                     {
                         Debug.Log("Compra exitosa! Dinero restante: " + MoneyManager.Instance.GetMoney());
-                        // TODO apuntar ingrediente comprado
+                        // Coger el nombre del ingrediente del popup
+                        GameObject ingredientNameObj = GameObject.Find("text_name_ingredients");
+                        if (ingredientNameObj != null)
+                        {
+                            TMP_Text ingredientNameText = ingredientNameObj.GetComponent<TMP_Text>();
+                            if (ingredientNameText != null)
+                            {
+                                string ingredientName = ingredientNameText.text;
+                                Debug.Log("Ingrediente comprado: " + ingredientName);
+
+                                // Apuntamos el ingrediente como comprado
+                                BoughtIngredientTracker.Instance.AddIngredient(ingredientName);
+                            }
+                        }
+
                         ClosePopup();
                     }
                     else
