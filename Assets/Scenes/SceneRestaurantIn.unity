@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: 3.52}
+  m_AnchoredPosition: {x: -0.01, y: 3.9}
   m_SizeDelta: {x: 5.2116, y: 1.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &684062216
@@ -896,6 +896,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f79272af54364868b131ee86b2942df, type: 3}
   - {fileID: 8300000, guid: d75c7bf45fdff4f06ae33efa3e9f5a02, type: 3}
   audioSource: {fileID: 1736416073}
+  changeAfterClicks: 6
+  sceneToLoad: SceneClient
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
