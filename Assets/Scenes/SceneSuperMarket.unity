@@ -1767,6 +1767,7 @@ GameObject:
   - component: {fileID: 785152336}
   - component: {fileID: 785152334}
   - component: {fileID: 785152339}
+  - component: {fileID: 785152340}
   m_Layer: 0
   m_Name: back
   m_TagString: Next
@@ -1915,6 +1916,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneName: SceneRestaurantOut
   isDifferentButton: 1
+--- !u!114 &785152340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785152333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dc7eefd83e144cab1c19029c717aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.05
 --- !u!1 &828060084
 GameObject:
   m_ObjectHideFlags: 0
