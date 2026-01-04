@@ -271,6 +271,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 0e5ba2fecd4aa104ea788e92aa97a378, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.12, y: 0.12}
+  Active: 0
 --- !u!1 &24895731
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +773,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 52e69894e449b61458ff9c6a085293ea, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.05, y: 0.075}
+  Active: 0
 --- !u!1 &68319755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1020,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 3d4906bec64c85848ac707bbfc67ff1d, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.14, y: 0.14}
+  Active: 0
 --- !u!1 &111257829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,6 +1499,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: cbf6f363bcae18040b7488e646e82577, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.14, y: 0.17}
+  Active: 0
 --- !u!1 &263774230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +1913,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 5a8cef7fd1cba574b88a5c060c2753ff, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.35, y: 0.31}
+  Active: 1
 --- !u!1 &377409961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,6 +2451,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 97b3e8c9744a20b48855b285aba08150, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.03, y: 0.03}
+  Active: 1
 --- !u!1 &503188944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7540917599043234556, guid: 6c703a28c94622e418347d91736a1802, type: 3}
@@ -2599,6 +2605,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: cb45fb042f682df468920438a15319eb, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.25, y: 0.25}
+  Active: 0
 --- !u!1 &581882653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,6 +2954,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: fdc38cf8aa4d3be478fefd3c6b788155, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.17, y: 0.14}
+  Active: 1
 --- !u!1 &839015740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,6 +3103,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: dd4e9630c492fab43bed3a6892afec19, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.03, y: 0.04}
+  Active: 0
 --- !u!1 &907263159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,6 +4363,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 3398520e7df791f45a545ac3010a6e9c, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.1, y: 0.1}
+  Active: 0
 --- !u!1 &1674420056
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,6 +4512,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 0140fbae52123f14f8441c37b8c26a2a, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.1, y: 0.13}
+  Active: 0
 --- !u!1 &1686178987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,6 +5256,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 90b76fb7bff62cc49998e13326749157, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.07, y: 0.12}
+  Active: 0
 --- !u!1 &1916145721
 GameObject:
   m_ObjectHideFlags: 0
