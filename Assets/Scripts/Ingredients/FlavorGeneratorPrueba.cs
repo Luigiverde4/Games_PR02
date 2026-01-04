@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlavorGeneratorPrueba : MonoBehaviour
 {
-    public List<string> flavors = new List<string> {"Cheese", "Tomato"};
+    public List<string> flavors = new List<string> {"Pepperoni", "Mushroom", "Bacon"};
     public float flavorInterval = 10f;
     float timer = 0f;
 

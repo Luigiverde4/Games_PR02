@@ -3950,7 +3950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneName: SceneRestaurantOut
-  isFirstTime: 0
+  isDifferentButton: 0
 --- !u!61 &1174194104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4330,8 +4330,9 @@ MonoBehaviour:
   - {fileID: 955959312}
   - {fileID: 515085431}
   flavors:
-  - Cheese
-  - Tomato
+  - Pepperoni
+  - Mushroom
+  - Bacon
   flavorInterval: 10
   maxOrders: 5
 --- !u!212 &1568739086
@@ -4395,7 +4396,7 @@ Transform:
   m_GameObject: {fileID: 1071197794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.06, y: 4.89, z: 0.044546857}
+  m_LocalPosition: {x: -4.92, y: 1.1, z: 0.044546857}
   m_LocalScale: {x: 13.986129, y: 1.7388328, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
