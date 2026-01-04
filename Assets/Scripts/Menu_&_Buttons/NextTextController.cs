@@ -20,6 +20,11 @@ public class NextTextController : MonoBehaviour
 
     private int currentIndex = 0;
 
+    public int changeAfterClicks = 6;   
+    public string sceneToLoad = "SceneClient";
+
+    private int clickCount = 0;
+
     void Start()
     {
         ShowCurrent();
@@ -27,6 +32,13 @@ public class NextTextController : MonoBehaviour
 
     public void NextText()
     {
+        clickCount++;
+
+        if (clickCount == changeAfterClicks)
+        {
+            SceneManager.LoadScene(sceneToLoad);
+            return;
+        }
         currentIndex++;
         if ((currentIndex >= texts.Length) && SceneManager.GetActiveScene().name == "SceneRestaurantIn")
         {
