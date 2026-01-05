@@ -13,6 +13,8 @@ public class ModeButton : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        // Actualizar el sprite al cargar la escena según el modo actual
+        UpdateButtonSprite();
     }
 
     void UpdateButtonSprite()

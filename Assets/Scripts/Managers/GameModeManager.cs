@@ -19,6 +19,10 @@ public class GameModeManager : MonoBehaviour
 
     // Revisar si es la primera vez que juega para darle la intro o no
     public bool isFirstTime = true;
+    
+    // Guardar el tiempo actual del cronómetro
+    public float cronoCurrentTime = 0f;
+    public bool cronoInitialized = false;
 
     void Awake()
     {
