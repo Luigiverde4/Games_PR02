@@ -25,10 +25,14 @@ public class ModeButton : MonoBehaviour
         if (GameModeManager.Instance.currentMode == GameModeManager.GameMode.Infinito)
         {
             spriteRenderer.sprite = spriteInfinito;
+            // Aplicar escala específica para el modo Infinito
+            transform.localScale = new Vector3(23.4038315f, 24.6626892f, 14.8248911f);
         }
         else if (GameModeManager.Instance.currentMode == GameModeManager.GameMode.Cronometro)
         {
             spriteRenderer.sprite = spriteCronometro;
+            // Aplicar escala específica para el modo Cronometro
+            transform.localScale = new Vector3(47.6455193f, 48.9307747f, 14.8248911f);
         }
     }
 
