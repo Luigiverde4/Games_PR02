@@ -2047,7 +2047,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: 5a8cef7fd1cba574b88a5c060c2753ff, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.35, y: 0.31}
-  Active: 0
+  Active: 1
 --- !u!1 &377409961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   ingredientSprite: {fileID: 21300000, guid: fdc38cf8aa4d3be478fefd3c6b788155, type: 3}
   dragZ: -2
   ingredientScale: {x: 0.17, y: 0.14}
-  Active: 0
+  Active: 1
 --- !u!1 &839015740
 GameObject:
   m_ObjectHideFlags: 0
