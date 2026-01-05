@@ -43,6 +43,17 @@ public class NextTextController : MonoBehaviour
 
         if (clickCount == changeAfterClicks)
         {
+            // Tutorial completado, marcar que ya no es la primera vez
+            if (GameModeManager.Instance != null)
+            {
+                GameModeManager.Instance.isFirstTime = false;
+                Debug.Log("Tutorial finished! isFirstTime set to: " + GameModeManager.Instance.isFirstTime);
+            }
+            else
+            {
+                Debug.LogError("GameModeManager.Instance is null when finishing tutorial!");
+            }
+            
             SceneManager.LoadScene(sceneToLoad);
             return;
         }

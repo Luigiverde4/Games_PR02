@@ -49,14 +49,33 @@ public class FlavorGenerator : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        
+        // Limpiar pedidos al iniciar
+        ActiveOrders.Clear();
+        timer = 0f;
+        Debug.Log("FlavorGenerator Awake - Orders cleared, timer reset");
     }
 
     void Update()
     {
+        // No generar pedidos si es la primera vez (tutorial activo)
+        if (GameModeManager.Instance != null && GameModeManager.Instance.isFirstTime)
+        {
+            // Resetear timer mientras está en tutorial
+            timer = 0f;
+            return;
+        }
+        
+        if (GameModeManager.Instance == null)
+        {
+            Debug.LogWarning("GameModeManager.Instance is null in FlavorGenerator.Update()");
+        }
+
         timer += Time.deltaTime;
 
         if (timer >= flavorInterval)
         {
+            Debug.Log("Timer reached interval. Creating order. isFirstTime: " + (GameModeManager.Instance != null ? GameModeManager.Instance.isFirstTime.ToString() : "null"));
             TryCreateOrder();
             timer = 0f;
         }
