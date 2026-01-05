@@ -15,7 +15,7 @@ public class SceneTracker : MonoBehaviour
     public static void SaveCurrentScene()
     {
         lastScene = SceneManager.GetActiveScene().name;
-        UnityEngine.Debug.Log("Scena attuale: " + lastScene);
+        // UnityEngine.Debug.Log("Scena attuale: " + lastScene);
 
     }
 }

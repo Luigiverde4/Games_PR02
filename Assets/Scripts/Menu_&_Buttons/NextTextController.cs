@@ -34,7 +34,7 @@ public class NextTextController : MonoBehaviour
     {
         clickCount++;
 
-        UnityEngine.Debug.Log("Scena precedente: " + SceneTracker.lastScene);
+        // UnityEngine.Debug.Log("Scena precedente: " + SceneTracker.lastScene);
         if(SceneTracker.lastScene == "SceneClient")
         {
             SceneManager.LoadScene(sceneToLoad);

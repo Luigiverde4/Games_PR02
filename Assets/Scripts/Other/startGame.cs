@@ -11,7 +11,7 @@ public class StartGame : MonoBehaviour
     {
         if (GameModeManager.Instance.isFirstTime && !isDifferentButton)
         {
-            Debug.Log("Primera vez - isFirstTime a false");
+            // Debug.Log("Primera vez - isFirstTime a false");
             GameModeManager.Instance.isFirstTime = false;
             SceneManager.LoadScene("SceneRestaurantIn");
         }

@@ -20,7 +20,7 @@ public class FlavorGenerator : MonoBehaviour
     // Ingredientes básicos para pizza cuando no se han comprado otros
     private List<string> basicIngredients = new List<string> { "Tomato Sauce", "Queso" };
 
-    public float flavorInterval = 10f;
+    public float flavorInterval = 15f;
     public int maxOrders = 3;
 
 
@@ -70,14 +70,16 @@ public class FlavorGenerator : MonoBehaviour
 
         string order = CreateOrder();
         ActiveOrders.Add(order);
+        Debug.Log("Nuevo pedido creado: " + order);
 
-        StartCoroutine(RemoveOrderAfterDelay(order, 30f));
+        StartCoroutine(RemoveOrderAfterDelay(order, 60f));
     }
 
     IEnumerator RemoveOrderAfterDelay(string order, float seconds)
     {
         yield return new WaitForSeconds(seconds);
         ActiveOrders.Remove(order);
+        Debug.Log("Pedido expirado y removido: " + order);
     }
 
     string CreateOrder()
@@ -112,10 +114,29 @@ public class FlavorGenerator : MonoBehaviour
             int index = Random.Range(0, pool.Count);
             string ingredient = pool[index];
             pool.RemoveAt(index);
-            int quantity = Random.Range(1, 6);
+            int quantity = (ingredient == "Tomato Sauce" || ingredient == "Queso") ? 1 : Random.Range(1, 6);
             result.Add(quantity + " x" + ingredient);
         }
 
+        // Asegurar que si hay queso, también haya salsa de tomate
+        bool hasCheese = result.Exists(s => s.Contains("Queso"));
+        bool hasTomato = result.Exists(s => s.Contains("Tomato Sauce"));
+        if (hasCheese && !hasTomato)
+        {
+            result.Add("1 xTomato Sauce");
+        }
+
+        // Asegurar que TODOS los pedidos tengan salsa de tomate y queso
+        if (!hasTomato)
+        {
+            result.Add("1 xTomato Sauce");
+        }
+        if (!hasCheese)
+        {
+            result.Add("1 xQueso");
+        }
+
+        result.Sort();
         return string.Join(", ", result);
     }
 }

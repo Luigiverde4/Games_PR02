@@ -6,6 +6,9 @@ public class PizzaManager : MonoBehaviour
 {
     public string estado = "bola";
 
+    // Cada vez que agregas un inggrediente, aumentas su contador
+    public int tomatoSauce = 0;
+    public int queso = 0;
     public int pepperoni = 0;
     public int mushroom = 0;
     public int bacon = 0;
@@ -21,6 +24,7 @@ public class PizzaManager : MonoBehaviour
 
     public void setEstado(string nuevo)
     {
+        // Debug.Log("Pizza estado cambiado de '" + estado + "' a '" + nuevo + "'");
         estado = nuevo;
     }
 

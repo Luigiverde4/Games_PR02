@@ -24,7 +24,7 @@ public class IngredientManager : MonoBehaviour
         // Verificar si el ingrediente está comprado
         if (BoughtIngredientTracker.Instance != null)
         {
-            Debug.Log("Checking ingredient: " + gameObject.tag);
+            // Debug.Log("Checking ingredient: " + gameObject.tag);
             Active = BoughtIngredientTracker.Instance.HasIngredient(gameObject.tag);
         }
         else
@@ -90,6 +90,14 @@ public class IngredientManager : MonoBehaviour
 
         switch (gameObject.tag)
         {
+            case "Tomato Sauce":
+                pm.tomatoSauce += 1;
+                Debug.Log("Ingrediente agregado: Tomato Sauce (x" + pm.tomatoSauce + ")");
+                break;
+            case "Queso":
+                pm.queso += 1;
+                Debug.Log("Ingrediente agregado: Queso (x" + pm.queso + ")");
+                break;
             case "Pepperoni":
                 pm.pepperoni += 1;
                 break;

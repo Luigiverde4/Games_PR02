@@ -11,7 +11,7 @@ public class BuyPopup : MonoBehaviour
     public void OpenPopup()
     {
         panel.SetActive(true);
-        Debug.Log("Popup aperto.");
+        // Debug.Log("Popup aperto.");
 
     }
 
@@ -37,7 +37,7 @@ public class BuyPopup : MonoBehaviour
                     // Intentar quitar el dinero
                     if (MoneyManager.Instance.quitarDinero(price))
                     {
-                        Debug.Log("Compra exitosa! Dinero restante: " + MoneyManager.Instance.GetMoney());
+                        // Debug.Log("Compra exitosa! Dinero restante: " + MoneyManager.Instance.GetMoney());
                         // Coger el nombre del ingrediente del popup
                         GameObject ingredientNameObj = GameObject.Find("text_name_ingredients");
                         if (ingredientNameObj != null)
@@ -46,7 +46,7 @@ public class BuyPopup : MonoBehaviour
                             if (ingredientNameText != null)
                             {
                                 string ingredientName = ingredientNameText.text;
-                                Debug.Log("Ingrediente comprado: " + ingredientName);
+                                // Debug.Log("Ingrediente comprado: " + ingredientName);
 
                                 // Apuntamos el ingrediente como comprado
                                 BoughtIngredientTracker.Instance.AddIngredient(ingredientName);

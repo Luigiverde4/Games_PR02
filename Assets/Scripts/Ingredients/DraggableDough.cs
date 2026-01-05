@@ -48,6 +48,7 @@ public class DraggableDough : MonoBehaviour
         PizzaManager pm = GetComponent<PizzaManager>();
         inFurnace = true;
         furnaceCounter += 1;
+        // Debug.Log("Pizza metida al horno. Estado: " + pm.estado);
 
         if (pm.estado == "queso")
         {
@@ -74,6 +75,7 @@ public class DraggableDough : MonoBehaviour
 
     IEnumerator CookRoutine()
     {
+        // Debug.Log("Comenzando coccion...");
         yield return new WaitForSeconds(cookingTime);
 
         if (!inFurnace) yield break;
@@ -82,11 +84,13 @@ public class DraggableDough : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = coockedPizza;
         pm.setEstado("cocinado");
+        // Debug.Log("Pizza cocinada!");
         furnaceRoutine = StartCoroutine(BurnRoutine());
     }
 
     IEnumerator BurnRoutine()
     {
+        // Debug.Log("Comenzando quemado...");
         yield return new WaitForSeconds(burningTime);
 
         if (!inFurnace) yield break;
@@ -95,6 +99,7 @@ public class DraggableDough : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = burntPizza;
         pm.setEstado("quemado");
+        // Debug.Log("Pizza quemada!");
     }
 
     void pizzaPlacing()
@@ -151,6 +156,7 @@ public class DraggableDough : MonoBehaviour
                 }
                 pm.setEstado("extendido");
                 doughPlaced = gameObject;
+                // Debug.Log("Masa extendida en la zona de pizza");
             }
             return;
         }
@@ -177,13 +183,22 @@ public class DraggableDough : MonoBehaviour
         {
             if (pm.estado == "cocinado")
             {
-                //Añadir cuando esté el cñodigo para valorar la puntuación de la pizza
-                Debug.Log("Pizzza Servida");
+                string pizzaOrder = GeneratePizzaOrder(pm);
+                if (FlavorGenerator.ActiveOrders.Contains(pizzaOrder))
+                {
+                    FlavorGenerator.ActiveOrders.Remove(pizzaOrder);
+                    int moneyEarned = CalculateMoney(pm);
+                    MoneyManager.Instance.sumarDinero(moneyEarned);
+                    Debug.Log("Pizza correcta servida! Ganaste $" + moneyEarned);
+                }
+                else
+                {
+                    Debug.Log("Pizza no coincide con ningun pedido");
+                }
                 Destroy(gameObject);
             }
             else if (pm.estado == "quemado")
             {
-                //Añadir cuando esté el código para valorar la puntuación de la pizza
                 Debug.Log("Muy mal, se te ha quemado la pizza");
                 Destroy(gameObject);
             }
@@ -197,9 +212,50 @@ public class DraggableDough : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnDestroy()
+    string GeneratePizzaOrder(PizzaManager pm)
     {
-        exitFurnace();
+        List<string> ingredients = new List<string>();
+        
+        // Agregar base si la pizza está cocinada (siempre tiene tomate y queso)
+        if (pm.estado == "cocinado" || pm.estado == "quemado")
+        {
+            ingredients.Add("1 xTomato Sauce");
+            ingredients.Add("1 xQueso");
+        }
+        
+        // Agregar toppings adicionales
+        if (pm.tomatoSauce > 0) ingredients.Add(pm.tomatoSauce + " xTomato Sauce");
+        if (pm.queso > 0) ingredients.Add(pm.queso + " xQueso");
+        if (pm.pepperoni > 0) ingredients.Add(pm.pepperoni + " xPepperoni");
+        if (pm.mushroom > 0) ingredients.Add(pm.mushroom + " xMushroom");
+        if (pm.bacon > 0) ingredients.Add(pm.bacon + " xBacon");
+        if (pm.egg > 0) ingredients.Add(pm.egg + " xEgg");
+        if (pm.olive > 0) ingredients.Add(pm.olive + " xOlive");
+        if (pm.onion > 0) ingredients.Add(pm.onion + " xOnion");
+        if (pm.pineapple > 0) ingredients.Add(pm.pineapple + " xPineapple");
+        if (pm.pepper > 0) ingredients.Add(pm.pepper + " xPepper");
+        if (pm.shrimp > 0) ingredients.Add(pm.shrimp + " xShrimp");
+        if (pm.cheese > 0) ingredients.Add(pm.cheese + " xCheese");
+        if (pm.anchovies > 0) ingredients.Add(pm.anchovies + " xAnchovies");
+        if (pm.caper > 0) ingredients.Add(pm.caper + " xCaper");
+
+        ingredients.Sort();
+        return string.Join(", ", ingredients);
+    }
+
+    int CalculateMoney(PizzaManager pm)
+    {
+        int totalUnits = 0;
+        
+        // Incluir base si está cocinada
+        if (pm.estado == "cocinado" || pm.estado == "quemado")
+        {
+            totalUnits += 1 + 1; // Tomato Sauce + Queso base
+        }
+        
+        // Sumar toppings adicionales
+        totalUnits += pm.tomatoSauce + pm.queso + pm.pepperoni + pm.mushroom + pm.bacon + pm.egg + pm.olive + pm.onion + pm.pineapple + pm.pepper + pm.shrimp + pm.cheese + pm.anchovies + pm.caper;
+        return totalUnits * 5; // 5 dollars per unit
     }
 
     void Update()

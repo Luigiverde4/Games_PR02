@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         // Stampa in console la scena da cui provieni
-        UnityEngine.Debug.Log("Scena precedente: " + SceneTracker.lastScene);
+        // UnityEngine.Debug.Log("Scena precedente: " + SceneTracker.lastScene);
 
         // Controlla se la scena precedente è "SceneClient"
         if(SceneTracker.lastScene == "SceneClient")
