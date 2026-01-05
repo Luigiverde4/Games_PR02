@@ -189,7 +189,27 @@ public class DraggableDough : MonoBehaviour
                     FlavorGenerator.ActiveOrders.Remove(pizzaOrder);
                     int moneyEarned = CalculateMoney(pm);
                     MoneyManager.Instance.sumarDinero(moneyEarned);
-                    Debug.Log("Pizza correcta servida! Ganaste $" + moneyEarned);
+                    
+                    // Agregar tiempo en modo Cronometro basado en complejidad
+                    if (GameModeManager.Instance != null && GameModeManager.Instance.currentMode == GameModeManager.GameMode.Cronometro)
+                    {
+                        // Calcular complejidad (base 2 + toppings)
+                        int complexity = 2; // Tomato Sauce + Queso base
+                        complexity += pm.tomatoSauce + pm.queso + pm.pepperoni + pm.mushroom + pm.bacon + pm.egg + pm.olive + pm.onion + pm.pineapple + pm.pepper + pm.shrimp + pm.cheese + pm.anchovies + pm.caper;
+                        
+                        float timeBonus = complexity * 5f; // 5 segundos por ingrediente
+                        
+                        TimerDisplay timerDisplay = FindObjectOfType<TimerDisplay>();
+                        if (timerDisplay != null)
+                        {
+                            timerDisplay.AddTime(timeBonus);
+                            Debug.Log("Pizza correcta! +$" + moneyEarned + " y +" + timeBonus + "s");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Pizza correcta servida! Ganaste $" + moneyEarned);
+                    }
                 }
                 else
                 {

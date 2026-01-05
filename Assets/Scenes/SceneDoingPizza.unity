@@ -4901,8 +4901,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1079, y: 414}
-  m_SizeDelta: {x: 583.0718, y: 207.81}
+  m_AnchoredPosition: {x: 855, y: 495}
+  m_SizeDelta: {x: 144.5596, y: 42.8058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705944817
 MonoBehaviour:
@@ -4951,14 +4951,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 34.79
+  m_fontSizeBase: 34.79
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4987,7 +4987,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 1.5404663, z: -4.564209, w: 0}
+  m_margin: {x: 0, y: 1.5404663, z: -49.924805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6759,7 +6759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2086960169}
-  timerDuration: 60
+  timerDuration: 10
 --- !u!1001 &2054258260026723978
 PrefabInstance:
   m_ObjectHideFlags: 0

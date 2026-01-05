@@ -24,7 +24,32 @@ public class TimerDisplay : MonoBehaviour
             Debug.LogError("Asigna el TextMeshPro en el inspector");
         }
         
+        // Suscribirse al evento de fin de tiempo
+        OnTimerEnded += HandleTimerEnded;
+        
         UpdateDisplay();
+    }
+
+    void OnDestroy()
+    {
+        // Desuscribirse del evento al destruir
+        OnTimerEnded -= HandleTimerEnded;
+    }
+
+    // Manejador cuando el tiempo se acaba
+    void HandleTimerEnded()
+    {
+        // Cambiar modo a Infinito
+        if (GameModeManager.Instance != null)
+        {
+            GameModeManager.Instance.currentMode = GameModeManager.GameMode.Infinito;
+            GameModeManager.Instance.cronoInitialized = false;
+            GameModeManager.Instance.cronoCurrentTime = 0f;
+            Debug.Log("Tiempo acabado! Cambiando a modo Infinito y regresando al menú...");
+        }
+        
+        // Cargar escena del menú
+        SceneManager.LoadScene("SceneRestaurantOut");
     }
 
     void Update()
