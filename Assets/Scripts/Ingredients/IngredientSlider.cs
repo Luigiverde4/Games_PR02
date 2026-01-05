@@ -18,7 +18,7 @@ public class IngredientSlider : MonoBehaviour
     public TextMeshPro priceText;
     public TextMeshPro nameText;
 
-    public Ingredient[] ingredients;
+    public List<Ingredient> ingredients = new List<Ingredient>();
 
     private int currentIndex = 0;
 
@@ -29,9 +29,11 @@ public class IngredientSlider : MonoBehaviour
 
     public void NextIngredient()
     {
+        if (ingredients.Count == 0) return;
+
         currentIndex++;
 
-        if (currentIndex >= ingredients.Length)
+        if (currentIndex >= ingredients.Count)
             currentIndex = 0;
 
         ShowIngredient();
@@ -39,18 +41,47 @@ public class IngredientSlider : MonoBehaviour
 
     public void PreviousIngredient()
     {
+        if (ingredients.Count == 0) return;
+
         currentIndex--;
 
         if (currentIndex < 0)
-            currentIndex = ingredients.Length - 1;
+            currentIndex = ingredients.Count - 1;
 
         ShowIngredient();
     }
 
     void ShowIngredient()
     {
+        if (ingredients.Count == 0)
+        {
+            ingredientImage.sprite = null;
+            priceText.text = "";
+            nameText.text = "";
+            return;
+        }
+
         ingredientImage.sprite = ingredients[currentIndex].icon;
         priceText.text = ingredients[currentIndex].price + " $";
         nameText.text = ingredients[currentIndex].name;
+    }
+
+    public void RemoveIngredientByName(string ingredientName)
+    {
+        int idx = ingredients.FindIndex(i => i.name == ingredientName);
+        if (idx < 0) return;
+
+        ingredients.RemoveAt(idx);
+        if (ingredients.Count == 0)
+        {
+            currentIndex = 0;
+            ShowIngredient();
+            return;
+        }
+
+        if (currentIndex >= ingredients.Count)
+            currentIndex = Mathf.Max(0, ingredients.Count - 1);
+
+        ShowIngredient();
     }
 }

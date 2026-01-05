@@ -7,6 +7,7 @@ using TMPro;
 public class BuyPopup : MonoBehaviour
 {
     public GameObject panel;
+    public IngredientSlider ingredientSlider; // Asignar en Inspector
 
     public void OpenPopup()
     {
@@ -50,6 +51,17 @@ public class BuyPopup : MonoBehaviour
 
                                 // Apuntamos el ingrediente como comprado
                                 BoughtIngredientTracker.Instance.AddIngredient(ingredientName);
+
+                                // Eliminarlo del slider para evitar compras repetidas
+                                if (ingredientSlider == null)
+                                {
+                                    ingredientSlider = FindObjectOfType<IngredientSlider>();
+                                }
+
+                                if (ingredientSlider != null)
+                                {
+                                    ingredientSlider.RemoveIngredientByName(ingredientName);
+                                }
                             }
                         }
 
