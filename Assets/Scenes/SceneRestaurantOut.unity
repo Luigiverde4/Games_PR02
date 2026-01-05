@@ -1207,8 +1207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75deb1a1510e4fa478d0d8468dbef22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteInfinito: {fileID: 0}
-  spriteCronometro: {fileID: 0}
+  spriteInfinito: {fileID: 21300000, guid: 0140fbae52123f14f8441c37b8c26a2a, type: 3}
+  spriteCronometro: {fileID: 21300000, guid: 97b3e8c9744a20b48855b285aba08150, type: 3}
 --- !u!61 &1221870092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1245,14 +1245,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.653334, y: 13.653334}
+    oldSize: {x: 3.48, y: 2.49}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.46, y: 3.21}
+  m_Size: {x: 3.84, y: 3.21}
   m_EdgeRadius: 0
 --- !u!114 &1221870093
 MonoBehaviour:
@@ -1309,7 +1309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2388ed029e01d4e6da1293e63bb26186, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0140fbae52123f14f8441c37b8c26a2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1329,8 +1329,8 @@ Transform:
   m_GameObject: {fileID: 1221870090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 584, y: 83, z: 314.4321}
-  m_LocalScale: {x: 24.04719, y: 24.04719, z: 24.04719}
+  m_LocalPosition: {x: 558.2891, y: 63.1325, z: 314.4321}
+  m_LocalScale: {x: 38.82419, y: 40.004906, z: 24.04719}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 82674739}

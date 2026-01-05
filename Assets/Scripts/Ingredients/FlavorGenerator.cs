@@ -102,38 +102,29 @@ public class FlavorGenerator : MonoBehaviour
             availableFlavors = new List<string>(basicIngredients);
         }
         
-        // Decidir cuántos sabores tendrá el pedido
-        int nFlavors = Random.Range(1, availableFlavors.Count + 1);
-        // Crear el pedido
-        List<string> pool = new List<string>(availableFlavors);
+        // Crear lista de resultados empezando con ingredientes base
         List<string> result = new List<string>();
-
-        // Seleccionar sabores aleatoriamente
-        for (int i = 0; i < nFlavors; i++)
+        result.Add("1 xTomato Sauce");
+        result.Add("1 xQueso");
+        
+        // Crear pool de ingredientes disponibles (sin los básicos)
+        List<string> pool = new List<string>(availableFlavors);
+        pool.Remove("Tomato Sauce");
+        pool.Remove("Queso");
+        
+        // Si hay ingredientes adicionales, agregar algunos aleatoriamente
+        if (pool.Count > 0)
         {
-            int index = Random.Range(0, pool.Count);
-            string ingredient = pool[index];
-            pool.RemoveAt(index);
-            int quantity = (ingredient == "Tomato Sauce" || ingredient == "Queso") ? 1 : Random.Range(1, 6);
-            result.Add(quantity + " x" + ingredient);
-        }
-
-        // Asegurar que si hay queso, también haya salsa de tomate
-        bool hasCheese = result.Exists(s => s.Contains("Queso"));
-        bool hasTomato = result.Exists(s => s.Contains("Tomato Sauce"));
-        if (hasCheese && !hasTomato)
-        {
-            result.Add("1 xTomato Sauce");
-        }
-
-        // Asegurar que TODOS los pedidos tengan salsa de tomate y queso
-        if (!hasTomato)
-        {
-            result.Add("1 xTomato Sauce");
-        }
-        if (!hasCheese)
-        {
-            result.Add("1 xQueso");
+            int nAdditional = Random.Range(0, Mathf.Min(pool.Count, 2) + 1); // 0 a 2 ingredientes extra
+            
+            for (int i = 0; i < nAdditional && pool.Count > 0; i++)
+            {
+                int index = Random.Range(0, pool.Count);
+                string ingredient = pool[index];
+                pool.RemoveAt(index);
+                int quantity = Random.Range(1, 4); // 1 a 3 unidades
+                result.Add(quantity + " x" + ingredient);
+            }
         }
 
         result.Sort();

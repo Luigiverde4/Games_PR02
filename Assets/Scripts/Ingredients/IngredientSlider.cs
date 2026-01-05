@@ -24,6 +24,28 @@ public class IngredientSlider : MonoBehaviour
 
     void Start()
     {
+        // Filtrar ingredientes ya comprados
+        if (BoughtIngredientTracker.Instance != null)
+        {
+            Debug.Log("Ingredientes comprados: " + string.Join(", ", BoughtIngredientTracker.Instance.boughtIngredients));
+            
+            // Crear una nueva lista sin los ingredientes comprados
+            List<Ingredient> filteredIngredients = new List<Ingredient>();
+            foreach (Ingredient ing in ingredients)
+            {
+                if (!BoughtIngredientTracker.Instance.HasIngredient(ing.name))
+                {
+                    filteredIngredients.Add(ing);
+                    Debug.Log("Ingrediente disponible: " + ing.name);
+                }
+                else
+                {
+                    Debug.Log("Ingrediente ya comprado (filtrado): " + ing.name);
+                }
+            }
+            ingredients = filteredIngredients;
+        }
+        
         ShowIngredient();
     }
 
