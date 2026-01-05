@@ -20,7 +20,7 @@ public class FlavorGenerator : MonoBehaviour
     // Ingredientes básicos para pizza cuando no se han comprado otros
     private List<string> basicIngredients = new List<string> { "Tomato Sauce", "Queso" };
 
-    public float flavorInterval = 15f;
+    public float flavorInterval = 10f;
     public int maxOrders = 3;
 
 
@@ -28,6 +28,7 @@ public class FlavorGenerator : MonoBehaviour
     public static List<string> ActiveOrders = new List<string>();
 
     float timer = 0f;
+    bool firstOrderAfterTutorialDone = false;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void AutoCreate()
@@ -53,6 +54,7 @@ public class FlavorGenerator : MonoBehaviour
         // Limpiar pedidos al iniciar
         ActiveOrders.Clear();
         timer = 0f;
+        firstOrderAfterTutorialDone = false;
     }
 
     void Update()
@@ -62,7 +64,16 @@ public class FlavorGenerator : MonoBehaviour
         {
             // Resetear timer mientras está en tutorial
             timer = 0f;
+            firstOrderAfterTutorialDone = false;
             return;
+        }
+
+        // Crear un pedido inmediatamente al terminar el tutorial
+        if (!firstOrderAfterTutorialDone)
+        {
+            TryCreateOrder();
+            firstOrderAfterTutorialDone = true;
+            timer = 0f;
         }
         
         timer += Time.deltaTime;
@@ -84,6 +95,7 @@ public class FlavorGenerator : MonoBehaviour
         ActiveOrders.Add(order);
         Debug.Log("Nuevo pedido creado: " + order);
 
+        // Cada pedido esta durante 60 segundos
         StartCoroutine(RemoveOrderAfterDelay(order, 60f));
     }
 
