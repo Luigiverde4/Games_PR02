@@ -6,13 +6,13 @@ public class GameModeManager : MonoBehaviour
 {
     public enum GameMode
     {
-        GameMode1,
-        GameMode2,
+        Infinito,
+        Cronometro,
         
     }
 
     // Modo por defecto
-    public GameMode currentMode = GameMode.GameMode1; 
+    public GameMode currentMode = GameMode.Infinito; 
 
     // Singleton
     public static GameModeManager Instance { get; private set; }
