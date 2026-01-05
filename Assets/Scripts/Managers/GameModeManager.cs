@@ -18,20 +18,7 @@ public class GameModeManager : MonoBehaviour
     public static GameModeManager Instance { get; private set; }
 
     // Revisar si es la primera vez que juega para darle la intro o no
-    private bool _isFirstTime = true;
-    public bool isFirstTime
-    {
-        get { return _isFirstTime; }
-        set 
-        { 
-            if (_isFirstTime != value)
-            {
-                Debug.Log("isFirstTime changed from " + _isFirstTime + " to " + value);
-                UnityEngine.Debug.LogWarning("Stack trace: " + UnityEngine.StackTraceUtility.ExtractStackTrace());
-            }
-            _isFirstTime = value;
-        }
-    }
+    public bool isFirstTime = true;
 
     void Awake()
     {
@@ -41,12 +28,10 @@ public class GameModeManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             // Forzar que sea true al crear la instancia, ignorando el inspector
-            _isFirstTime = true;
-            Debug.Log("GameModeManager created. isFirstTime: " + isFirstTime);
+            isFirstTime = true;
         }
         else
         {
-            Debug.Log("Duplicate GameModeManager destroyed. Its isFirstTime was: " + isFirstTime);
             Destroy(gameObject); 
         }
     }

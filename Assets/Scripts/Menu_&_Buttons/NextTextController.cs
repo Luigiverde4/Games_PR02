@@ -47,11 +47,6 @@ public class NextTextController : MonoBehaviour
             if (GameModeManager.Instance != null)
             {
                 GameModeManager.Instance.isFirstTime = false;
-                Debug.Log("Tutorial finished! isFirstTime set to: " + GameModeManager.Instance.isFirstTime);
-            }
-            else
-            {
-                Debug.LogError("GameModeManager.Instance is null when finishing tutorial!");
             }
             
             SceneManager.LoadScene(sceneToLoad);
