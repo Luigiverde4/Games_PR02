@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975391689ee1442fca6a020975a67ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: SceneRestaurantOut
+  gameSceneName: SceneDoingPizza
   isDifferentButton: 1
 --- !u!114 &785152340
 MonoBehaviour:
@@ -2457,6 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1486313297}
+  ingredientSlider: {fileID: 0}
 --- !u!1 &1486313297
 GameObject:
   m_ObjectHideFlags: 0
