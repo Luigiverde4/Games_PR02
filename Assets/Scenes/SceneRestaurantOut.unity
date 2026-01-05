@@ -1048,8 +1048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75deb1a1510e4fa478d0d8468dbef22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteInfinito: {fileID: 21300000, guid: 0140fbae52123f14f8441c37b8c26a2a, type: 3}
-  spriteCronometro: {fileID: 21300000, guid: 97b3e8c9744a20b48855b285aba08150, type: 3}
+  spriteInfinito: {fileID: 21300000, guid: efb4c771bb8b27e4d8c67921de023977, type: 3}
+  spriteCronometro: {fileID: 21300000, guid: 971b9b46ff9a3df448c5e445f4c74996, type: 3}
 --- !u!61 &1221870092
 BoxCollider2D:
   m_ObjectHideFlags: 0
